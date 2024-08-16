@@ -35,6 +35,8 @@ Model compression을 통해 성능을 최적화할 수 있습니다.
 ## BERT model의 Pruning과 Attention Heatmap
 ### Pruning
 
+<img width="577" alt="image" src="https://github.com/user-attachments/assets/01eb9f30-8a51-4224-b5cb-bb40e5843629">
+
 + 원문: "As a visual treat, the film is almost perfect."
 
   + 처음에 문장은 11개의 토큰과 12개의 어텐션 헤드로 구성된 BERT의 첫 번째 레이어를 통과합니다. 이 단계에서는 100%의 계산과 메모리 접근이 이루어집니다.
