@@ -32,3 +32,24 @@ Model compression을 통해 성능을 최적화할 수 있습니다.
 + T-NLG (2020): 17B 파라미터
 + MT-NLG (2021): 530B 파라미터
 
+## BERT model의 Pruning과 Attention Heatmap
+### Pruning
+
++ 원문: "As a visual treat, the film is almost perfect."
+
+  + 처음에 문장은 11개의 토큰과 12개의 어텐션 헤드로 구성된 BERT의 첫 번째 레이어를 통과합니다. 이 단계에서는 100%의 계산과 메모리 접근이 이루어집니다.
+  
++ 첫 번째 Pruning 후: "As treat, film perfect."
+
+  + 이 단계에서는 중요하지 않은 단어들("a", "visual", "the", "is", "almost")이 제거되며, 토큰 수가 5개로 줄어듭니다. 어텐션 헤드도 10개로 줄어들며, 전체 계산의 38%만 사용됩니다.
+  
++ 두 번째 Pruning 후: "film perfect"
+
+  + 여기서는 "As", "treat"와 같은 덜 중요한 토큰들이 더 제거되고, 최종적으로 2개의 토큰만 남습니다. 어텐션 헤드도 8개로 줄어듭니다. 이 시점에서 전체 계산량의 12%만 사용됩니다.
+  
++ 결과: 문장은 "film perfect"라는 핵심적인 정보만 남기고, BERT 모델은 이 문장이 긍정적인 감정을 나타낸다고 분류합니다.
+
+### Attention Heatmap
+
++ 이 히트맵에서, 중요하지 않은 토큰들이 단계별로 제거됩니다. 예를 들어, "I", "bet", "the" 등의 토큰이 누적 중요도가 낮다고 판단되면 제거됩니다. 그래프 아래쪽의 텍스트는 "Tokens with small cumulative importance scores are pruned away"라고 되어 있으며, 누적 중요도가 작은 토큰들은 제거된다고 설명하고 있습니다.
+
