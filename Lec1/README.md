@@ -1,5 +1,6 @@
 # Lec1 Introduction
 ## Model compression
+
 <img width="805" alt="image" src="https://github.com/user-attachments/assets/20dd2e08-3e4a-4d79-bb73-5bdde8724b2d">
 
 Model compression을 통해 성능을 최적화할 수 있습니다.
@@ -17,3 +18,17 @@ Model compression을 통해 성능을 최적화할 수 있습니다.
   + 각 클래스에 대해 단 하나의 예시만 제공될 때 모델이 그 클래스를 인식할 수 있도록 하는 학습 방법입니다. 이는 유사도 학습이나 메타 학습 등의 기법을 활용하여 구현됩니다.
 + Few-shot
   + 극소량의 데이터만을 이용하여 새로운 작업이나 클래스를 빠르게 학습하도록 설계된 알고리즘을 말합니다. 이 방법은 메타 러닝(meta-learning)이나 학습 전략의 최적화 등을 통해 적은 데이터로도 효과적인 일반화(generalization) 능력을 갖추도록 합니다.
+ 
+## Model size and GPU memory
+
+<img width="408" alt="image" src="https://github.com/user-attachments/assets/1b006082-5b25-4fc3-a94c-5938c5ca610c">
+
++ Transformer (2017): 0.05B (50 million) 파라미터
++ GPT (2018): 0.11B 파라미터
++ BERT (2019): 0.34B 파라미터
++ GPT-2 (2019): 1.5B 파라미터
++ MegatronLM (2019): 8.3B 파라미터
++ GPT-3 (2020): 175B 파라미터
++ T-NLG (2020): 17B 파라미터
++ MT-NLG (2021): 530B 파라미터
+
