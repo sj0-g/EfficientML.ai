@@ -2,10 +2,13 @@
 ## Model compression
 <img width="805" alt="image" src="https://github.com/user-attachments/assets/20dd2e08-3e4a-4d79-bb73-5bdde8724b2d">
 
-Model compression을 통해 성능을 최적화할 수 있다. 
+Model compression을 통해 성능을 최적화할 수 있습니다.
 + Pruning
+  + Pruning은 신경망에서 중요하지 않거나 덜 중요한 연결(가중치)을 제거하여 모델의 크기를 줄이는 방법입니다. 모델이 학습한 후, 특정 연결이 모델의 성능에 거의 영향을 미치지 않는다고 판단되면 이를 제거하여 계산량을 줄이고, 모델을 더 가볍게 만들어 효율성을 높입니다. 
 + Sparcity
+  + Sparsity는 신경망의 가중치 중 많은 부분이 0에 가까운 값을 가지는 상태를 말합니다. 희소성을 높이는 것은 모델이 불필요한 가중치를 많이 가지지 않도록 하는 것을 목표로 합니다. 희소한 모델은 메모리 사용을 줄이고, 계산 속도를 높일 수 있습니다.
 + Quantization
+  + Quantization은 신경망의 가중치와 활성화를 표현하는 데 사용하는 숫자 비트를 줄여, 모델의 크기와 계산량을 줄이는 기술입니다. 예를 들어, 32비트 부동소수점 대신 8비트 정수로 표현할 수 있습니다. 이렇게 하면 모델의 메모리 요구량과 연산 복잡도를 크게 줄일 수 있습니다.
 
 ## Zero-shot, One-shot, Few-shot
 + Zero-shot
