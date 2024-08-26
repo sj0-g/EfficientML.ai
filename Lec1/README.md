@@ -1,4 +1,5 @@
 # Lecture1 Introduction
+[Lecture 1 - Introduction](https://www.youtube.com/watch?v=6cAmS-_vEh8&list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB&index=2)
 ## 1.1 Model compression
 
 <img width="805" alt="image" src="https://github.com/user-attachments/assets/20dd2e08-3e4a-4d79-bb73-5bdde8724b2d">
