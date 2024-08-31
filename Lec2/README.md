@@ -4,7 +4,7 @@
 
 FCL의 모식도
 
-> <img width="467" alt="image" src="https://github.com/user-attachments/assets/cae0650c-050f-4b3f-8cb8-5845e71ee830">
+<img width="467" alt="image" src="https://github.com/user-attachments/assets/cae0650c-050f-4b3f-8cb8-5845e71ee830">
 
 + Input Layer(x)
 + Hidden Layer(y)
@@ -14,7 +14,7 @@ FCL의 모식도
 
 활성화 함수
 
-> <img width="722" alt="image" src="https://github.com/user-attachments/assets/763de63c-8a36-4adf-a8c7-17dad1c6ddbe">
+<img width="722" alt="image" src="https://github.com/user-attachments/assets/763de63c-8a36-4adf-a8c7-17dad1c6ddbe">
 
 ## 2.3 Convolution
 
@@ -22,7 +22,7 @@ FCL의 모식도
 
 + Convolution의 모식도
   
-> <img width="696" alt="image" src="https://github.com/user-attachments/assets/8f255520-9ead-4d15-ada3-2d5db742fea7">
+<img width="696" alt="image" src="https://github.com/user-attachments/assets/8f255520-9ead-4d15-ada3-2d5db742fea7">
 
 + Convolution의 구성
   + 필터/커널 (Filter/Kernel)
@@ -42,11 +42,11 @@ FCL의 모식도
 
 + Kernel의 의미 
 
-> <img width="681" alt="image" src="https://github.com/user-attachments/assets/b096a558-9056-4d4c-9072-8b2d67e34e7e">
+<img width="681" alt="image" src="https://github.com/user-attachments/assets/b096a558-9056-4d4c-9072-8b2d67e34e7e">
 
 ## 2.4 Padding
 
-> ![image](https://github.com/user-attachments/assets/2cf44296-348d-44ec-a7c4-c189b55545de)
+![image](https://github.com/user-attachments/assets/2cf44296-348d-44ec-a7c4-c189b55545de)
 
 + Zero Padding: 경계를 0으로 채워 넣는 방식.
 + Reflection Padding: 데이터를 경계에서 반사하여 채우는 방식.
@@ -54,7 +54,7 @@ FCL의 모식도
 
 ## 2.5 Pooling
 
-> <img width="440" alt="image" src="https://github.com/user-attachments/assets/3843eb51-7314-4b83-9d17-a89a7a9cf609">
+<img width="440" alt="image" src="https://github.com/user-attachments/assets/3843eb51-7314-4b83-9d17-a89a7a9cf609">
 
 입력 특징 맵을 다운샘플링하여 더 작은 크기의 출력 특징 맵으로 변환합니다. 이를 통해 중요한 정보는 유지하면서도 데이터의 크기를 줄여 모델의 복잡도를 낮춥니다.
 
@@ -83,5 +83,47 @@ FCL의 모식도
 
 > <img width="692" alt="image" src="https://github.com/user-attachments/assets/7ea7f20f-a917-4f93-b533-0a13c98c5053">
 
+## 2.7 h_0
 
+출력 크기를 계산하는 방식
 
+> <img width="145" alt="image" src="https://github.com/user-attachments/assets/68811e52-b0f5-4585-bca4-2629ab5dee1e">
+
+h_i는 입력의 높이, p는 패딩, k_h는 필터의 높이, s는 스트라이드에 해당합니다.
+
+## 2.8 Latency&Throughput
+
+### 2.8.1 Latency
+
+<img width="788" alt="image" src="https://github.com/user-attachments/assets/5c4aae52-d171-4f5a-ba21-309ef586bd32">
+
+### 2.8.2 Throughput
+
+<img width="652" alt="image" src="https://github.com/user-attachments/assets/48794fa7-464c-40b6-ab18-bfb7cd7deb5a">
+
+### 2.8.3 Trade-off in Latency(지연시간) & Throughput(처리량)
+
+<img width="650" alt="image" src="https://github.com/user-attachments/assets/70833041-0328-4540-956a-c2fd051f44c4">
+
+## 2.9 Multiply-Accumulate Operations(MAC)
+
+<img width="782" alt="image" src="https://github.com/user-attachments/assets/8a019ec4-4d34-4ffe-a421-3699577a37ea">
+
+## 2.10 Floating Point Operations (FLOP)
+
+하나의 MAC 연산은 두 개의 FLOP을 포함합니다.
++ 곱셈: b*c
++ 덧셈: a+(b*c)
+
+AlexNet은 총 7억 2400만 개의 MAC 연산을 포함합니다.
++ 총 FLOP 수는 724M * 2 = 1.4G FLOP가 됩니다.
+
+FLOPS는 초당 수행할 수 있는 FLOP의 수를 나타냅니다. 이는 시스템의 성능을 평가하는 지표로 사용됩니다.
+
+## 2.11 Operations (OP)
+
+FLOP (Floating Point Operations)
++ FLOP은 부동 소수점 연산에만 해당하는 연산의 수를 나타냅니다. 즉, 실수 연산(소수점이 포함된 연산)만을 계산합니다.
+
+OP (Operations)
++ OP는 모든 종류의 연산을 포함하는 포괄적인 개념입니다. 여기에는 정수 연산, 부동 소수점 연산, 논리 연산 등 모든 연산이 포함될 수 있습니다.
