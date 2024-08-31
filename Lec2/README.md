@@ -2,7 +2,9 @@
 [Lecture 2 - Basics of Neural Networks, MIT 6.5940, Fall 2023](https://www.youtube.com/watch?v=ieg0RJb7TeI&list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB&index=4)
 ## 2.1 Fulley Connected Layer
 
-<img width="467" alt="image" src="https://github.com/user-attachments/assets/cae0650c-050f-4b3f-8cb8-5845e71ee830">
+FCL의 모식도
+
+> <img width="467" alt="image" src="https://github.com/user-attachments/assets/cae0650c-050f-4b3f-8cb8-5845e71ee830">
 
 + Input Layer(x)
 + Hidden Layer(y)
@@ -10,7 +12,9 @@
 
 ## 2.2 Activation Functions
 
-<img width="722" alt="image" src="https://github.com/user-attachments/assets/763de63c-8a36-4adf-a8c7-17dad1c6ddbe">
+활성화 함수
+
+> <img width="722" alt="image" src="https://github.com/user-attachments/assets/763de63c-8a36-4adf-a8c7-17dad1c6ddbe">
 
 ## 2.3 Convolution
 
@@ -18,34 +22,66 @@
 
 + Convolution의 모식도
   
-<img width="696" alt="image" src="https://github.com/user-attachments/assets/8f255520-9ead-4d15-ada3-2d5db742fea7">
+> <img width="696" alt="image" src="https://github.com/user-attachments/assets/8f255520-9ead-4d15-ada3-2d5db742fea7">
 
 + Convolution의 구성
-++ 필터/커널 (Filter/Kernel)
-+++ 작은 크기의 행렬(예: 3x3, 5x5)로, 입력 데이터와 곱셈을 통해 특징을 추출하는 역할을 합니다.
-++ 스트라이드 (Stride)
-+++ 필터가 입력 데이터를 따라 이동하는 간격을 나타냅니다. 스트라이드가 크면 출력 크기는 작아지고, 작으면 출력 크기는 커집니다.
-++ 패딩 (Padding)
-+++ 필터가 입력 데이터의 경계를 처리할 때 발생하는 출력 크기 축소를 방지하기 위해 입력 데이터의 외곽에 값을 추가하는 방법입니다. (Zero Padding, Reflection Padding, Replication Padding 등이 있습니다.)
+  + 필터/커널 (Filter/Kernel)
+    + 작은 크기의 행렬(예: 3x3, 5x5)로, 입력 데이터와 곱셈을 통해 특징을 추출하는 역할을 합니다.
+  + 스트라이드 (Stride)
+    + 필터가 입력 데이터를 따라 이동하는 간격을 나타냅니다. 스트라이드가 크면 출력 크기는 작아지고, 작으면 출력 크기는 커집니다.
+  + 패딩 (Padding)
+    + 필터가 입력 데이터의 경계를 처리할 때 발생하는 출력 크기 축소를 방지하기 위해 입력 데이터의 외곽에 값을 추가하는 방법입니다. (Zero Padding, Reflection Padding, Replication Padding 등이 있습니다.)
 
 + Convolution의 활용
-++ 엣지 검출 (Edge Detection)
-+++ 필터를 이용해 이미지에서 경계(엣지)를 감지할 수 있습니다.
-++ 블러링 (Blurring)
-+++ 필터를 사용하여 이미지를 흐리게 만들 수 있습니다.
-++ 특징 추출 (Feature Extraction)
-+++ CNN에서 중요한 특징을 추출해 다음 계층으로 전달하여 이미지 분류나 객체 인식에 사용됩니다.
+  + 엣지 검출 (Edge Detection)
+    + 필터를 이용해 이미지에서 경계(엣지)를 감지할 수 있습니다.
+  + 블러링 (Blurring)
+    + 필터를 사용하여 이미지를 흐리게 만들 수 있습니다.
+  + 특징 추출 (Feature Extraction)
+    + CNN에서 중요한 특징을 추출해 다음 계층으로 전달하여 이미지 분류나 객체 인식에 사용됩니다.
 
 + Kernel의 의미 
 
-<img width="681" alt="image" src="https://github.com/user-attachments/assets/b096a558-9056-4d4c-9072-8b2d67e34e7e">
+> <img width="681" alt="image" src="https://github.com/user-attachments/assets/b096a558-9056-4d4c-9072-8b2d67e34e7e">
 
 ## 2.4 Padding
 
-![image](https://github.com/user-attachments/assets/2cf44296-348d-44ec-a7c4-c189b55545de)
+> ![image](https://github.com/user-attachments/assets/2cf44296-348d-44ec-a7c4-c189b55545de)
 
 + Zero Padding: 경계를 0으로 채워 넣는 방식.
 + Reflection Padding: 데이터를 경계에서 반사하여 채우는 방식.
 + Replication Padding: 경계의 값을 그대로 복사하여 채우는 방식.
+
+## 2.5 Pooling
+
+> <img width="440" alt="image" src="https://github.com/user-attachments/assets/3843eb51-7314-4b83-9d17-a89a7a9cf609">
+
+입력 특징 맵을 다운샘플링하여 더 작은 크기의 출력 특징 맵으로 변환합니다. 이를 통해 중요한 정보는 유지하면서도 데이터의 크기를 줄여 모델의 복잡도를 낮춥니다.
+
++ Max Pooling은 각 영역에서 가장 큰 값을 선택하여, 중요한 특징을 강조하는 역할을 합니다.
++ Average Pooling은 각 영역의 평균값을 계산하여, 일반적인 특징을 유지하면서 크기를 줄입니다.
++ 풀링 레이어는 학습 중에 업데이트되는 가중치가 없으며, 데이터의 차원을 축소하고 중요한 정보를 압축하는 데 사용됩니다.
+
+## 2.6 Normalization
+
+정규화
+
+> <img width="139" alt="image" src="https://github.com/user-attachments/assets/b9888ae4-26f2-4114-b8ce-5d12a94c1da2">
+
+평균과 표준편차를 구하는 방식
+
+> <img width="150" alt="image" src="https://github.com/user-attachments/assets/926f8107-6ced-453a-8bc0-f9b17cf5abbd">
+
++ Batch Normalization (배치 정규화)
+  + 배치 차원(n)을 기준으로 정규화합니다. 즉, 한 번에 들어오는 여러 샘플(배치)에서의 평균과 표준 편차를 사용하여 정규화합니다.
++ Layer Normalization (레이어 정규화)
+  + 레이어 전체의 특징들(c)을 기준으로 정규화합니다. 각 입력 샘플의 특징들을 동일한 분포로 맞춥니다.
++ Instance Normalization (인스턴스 정규화)
+  + 각 샘플의 특징 맵(h×w)을 기준으로 정규화합니다. 주로 이미지 스타일 변환과 같은 작업에 사용됩니다.
++ Group Normalization (그룹 정규화)
+  + 채널을 그룹으로 나누어 각 그룹에 대해 정규화합니다. 배치 크기에 의존하지 않기 때문에 작은 배치 크기에서도 효과적입니다.
+
+> <img width="692" alt="image" src="https://github.com/user-attachments/assets/7ea7f20f-a917-4f93-b533-0a13c98c5053">
+
 
 
