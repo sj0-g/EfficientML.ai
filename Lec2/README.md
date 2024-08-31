@@ -81,7 +81,7 @@ FCL의 모식도
 + Group Normalization (그룹 정규화)
   + 채널을 그룹으로 나누어 각 그룹에 대해 정규화합니다. 배치 크기에 의존하지 않기 때문에 작은 배치 크기에서도 효과적입니다.
 
-> <img width="692" alt="image" src="https://github.com/user-attachments/assets/7ea7f20f-a917-4f93-b533-0a13c98c5053">
+<img width="692" alt="image" src="https://github.com/user-attachments/assets/7ea7f20f-a917-4f93-b533-0a13c98c5053">
 
 ## 2.7 h_0
 
