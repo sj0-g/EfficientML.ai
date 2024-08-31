@@ -2,8 +2,6 @@
 [Lecture 2 - Basics of Neural Networks, MIT 6.5940, Fall 2023](https://www.youtube.com/watch?v=ieg0RJb7TeI&list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB&index=4)
 ## 2.1 Fulley Connected Layer
 
-FCL의 모식도
-
 <img width="467" alt="image" src="https://github.com/user-attachments/assets/cae0650c-050f-4b3f-8cb8-5845e71ee830">
 
 + Input Layer(x)
@@ -11,8 +9,6 @@ FCL의 모식도
 + Output Layer(z)
 
 ## 2.2 Activation Functions
-
-활성화 함수
 
 <img width="722" alt="image" src="https://github.com/user-attachments/assets/763de63c-8a36-4adf-a8c7-17dad1c6ddbe">
 
