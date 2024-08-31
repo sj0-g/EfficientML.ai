@@ -2,7 +2,7 @@
 [Lecture 1 - Introduction, MIT 6.5940, Fall 2023](https://www.youtube.com/watch?v=6cAmS-_vEh8&list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB&index=2)
 ## 1.1 Model compression
 
-> <img width="805" alt="image" src="https://github.com/user-attachments/assets/20dd2e08-3e4a-4d79-bb73-5bdde8724b2d">
+<img width="805" alt="image" src="https://github.com/user-attachments/assets/20dd2e08-3e4a-4d79-bb73-5bdde8724b2d">
 
 Model compression을 통해 성능을 최적화할 수 있습니다.
 + Pruning
@@ -22,7 +22,7 @@ Model compression을 통해 성능을 최적화할 수 있습니다.
  
 ## 1.3 Model size and GPU memory
 
-> <img width="408" alt="image" src="https://github.com/user-attachments/assets/1b006082-5b25-4fc3-a94c-5938c5ca610c">
+<img width="408" alt="image" src="https://github.com/user-attachments/assets/1b006082-5b25-4fc3-a94c-5938c5ca610c">
 
 + Transformer (2017): 0.05B (50 million) 파라미터
 + GPT (2018): 0.11B 파라미터
@@ -36,7 +36,7 @@ Model compression을 통해 성능을 최적화할 수 있습니다.
 ## 1.4 BERT model의 Pruning과 Attention Heatmap
 ### 1.4.1 Pruning
 
-> <img width="577" alt="image" src="https://github.com/user-attachments/assets/01eb9f30-8a51-4224-b5cb-bb40e5843629">
+<img width="577" alt="image" src="https://github.com/user-attachments/assets/01eb9f30-8a51-4224-b5cb-bb40e5843629">
 
 + 원문: "As a visual treat, the film is almost perfect."
 
