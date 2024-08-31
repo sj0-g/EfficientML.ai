@@ -127,3 +127,21 @@ FLOP (Floating Point Operations)
 
 OP (Operations)
 + OP는 모든 종류의 연산을 포함하는 포괄적인 개념입니다. 여기에는 정수 연산, 부동 소수점 연산, 논리 연산 등 모든 연산이 포함될 수 있습니다.
+
+## 2.12 Model Size
+
+모델 크기는 신경망의 가중치를 저장하는 데 필요한 용량을 의미합니다.
+
+일반적으로 모델 크기를 나타내는 단위는 MB(Megabyte), KB(Kilobyte), 또는 비트(bits)입니다.
+
+모델 사이즈를 계산하는 방법
+
+> <img width="378" alt="image" src="https://github.com/user-attachments/assets/3007124e-1958-4f63-8cc2-e840549e6a0e">
+
++ AlexNet의 경우 6100만(61M)개의 파라미터를 가지고 있습니다.
++ 만약 모든 가중치가 32비트(4바이트) 숫자로 저장된다면, 전체 저장 용량은 다음과 같습니다.
+> <img width="445" alt="image" src="https://github.com/user-attachments/assets/df3379e3-664e-4308-a0ca-2cd2e959b850">
++ 만약 8비트(1바이트) 숫자로 저장된다면, 전체 저장 용량은 다음과 같습니다.
+> <img width="269" alt="image" src="https://github.com/user-attachments/assets/01ee0cbb-6dbf-4acf-8d85-6eb4eaaa7e9c">
+
+
