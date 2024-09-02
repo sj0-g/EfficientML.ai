@@ -40,13 +40,13 @@
 LoRA
 > <img width="233" alt="image" src="https://github.com/user-attachments/assets/9e4a4a0e-d386-4cb2-a512-9ef0b37462dc">
 
-# 3. AREN’T EXISTING SOLUTIONS GOOD ENOUGH
+# 3. Aren't Existing Solutions Good Enough
 
 Transformer에 추가되는 Adapter
 
-<img width="486" alt="image" src="https://github.com/user-attachments/assets/f6567de9-06da-487e-a2bb-7f3c251d08f4">
+<img width="486" alt="image" src="https://github.com/user-attachments/assets/f6567de9-06da-487e-a2bb-7f3c251d08f4">  
 
-
+  
 
 Adapter의 장점
 
@@ -63,5 +63,33 @@ Adapter의 단점
 
 + 프롬프트 튜닝의 어려움
   + 어댑터를 사용하지 않고, 대신 프롬프트를 직접 최적화하는 접근법(프리픽스 튜닝 등)은 또 다른 문제를 야기합니다. 프롬프트 튜닝은 최적화가 어렵고, 학습 가능한 파라미터에 따라 성능이 비선형적으로 변화하는 경향이 있습니다.
+
+# 4. Our Method
+
+## 4.1 LoRA의 기본 Idea
+
+LoRA는 모델의 파라미터를 효율적으로 업데이트하기 위해 저차원 행렬(저차원 랭크)을 사용하여 파라미터를 재파라미터화합니다. 
+이를 통해 원래의 가중치 행렬을 고정한 채, 더 작은 크기의 행렬만 학습하게 되어 메모리와 계산 비용을 크게 줄일 수 있습니다.
+
+저차원 랭크
+> LoRA는 모델의 파라미터 업데이트를 저차원(rank) 공간에서 수행합니다. 즉, 모델의 가중치 업데이트를 $W_0+BA$의 형태로 표시합니다. 여기서 $𝐴$와 $B$는 작은 차원의 행렬입니다.
+> 이 방법을 통해 전체 가중치 행렬을 업데이트하는 것과 유사한 성능을 유지하면서도, 실제로는 훨씬 적은 파라미터만 학습하게 됩니다.
+
+
+# 5. Empirical Experiments
+
+Baseline
+
++ FT: Fine-Tuning
++ FT_Top2: 마지막 두 레이어만 튜닝
++ BitFit
++ Adap_H: 오리지널 adapter tuning
++ Adap_L: MLP 모듈 뒤와 LayerNorm 뒤에만 adapter layer 적용
++ Adap_P: AdapterFusion (Adap_L과 유사)
++ Adap_D: AdapterDrop (몇몇 adapter layer를 drop)
+
+<img width="520" alt="image" src="https://github.com/user-attachments/assets/15928c1e-260e-4eef-84a3-98d22eae896e">
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/6d6a65c6-1db4-428f-8930-e4045a3b0453">
 
 
